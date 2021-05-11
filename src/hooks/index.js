@@ -3,7 +3,10 @@ import { useEffect, useRef } from "react";
 export const usePrevious = (value) => {
   const ref = useRef();
   useEffect(() => {
-    ref.current = value
+    setTimeout(() => {
+      ref.current = value
+
+    }, 100)
   })
   return ref.current;
 } 

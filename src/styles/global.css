@@ -7,3 +7,11 @@
 body {
   height: 100rem;
 }
+
+a {
+  text-decoration: none;
+}
+
+button {
+  border: none;
+}
