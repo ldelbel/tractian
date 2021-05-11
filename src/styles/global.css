@@ -2,10 +2,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
 body {
-  height: 100rem;
+  height: 150rem;
 }
 
 a {
@@ -14,4 +15,11 @@ a {
 
 button {
   border: none;
+}
+
+:root {
+  --blue: rgb(30, 59, 138);
+  --green: rgb(34, 197, 94);
+  --green-light: rgb(106, 223, 129);
+  --grad-from: rgb(37, 99, 235);
 }

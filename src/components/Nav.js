@@ -5,15 +5,19 @@ import { usePrevious } from "../hooks";
 
 const StyledNav = styled.nav`
   width: 100%;
-  height: ${(props) =>
-    props.scroll.dir === "up" || props.scroll.off === 0 ? "5.2rem" : "2.8rem"};
+  height: ${(props) => {
+    if (props.scroll.off === 0) return "6.8rem";
+    if (props.scroll.dir === "up" || props.scroll.off < 550) return "5.2rem";
+
+    return "2.8rem";
+  }};
   position: fixed;
-  background: #1e3a8a;
+  background: ${(props) =>
+    props.scroll.off === 0 ? "transparent" : "var(--blue)"};
   font-size: 1rem;
   color: white;
   display: flex;
   align-items: center;
-  font-family: "Poppins", sans-serif;
   padding: 0 1.5rem;
   transition: all 0.25s;
   transition-timing-function: ease-in-out;
@@ -34,11 +38,12 @@ const StyledNav = styled.nav`
   }
 `;
 const Button = styled.button`
-  background: rgba(34, 197, 94);
-  padding: ${(props) =>
-      props.scroll.dir === "up" || props.scroll.off === 0 ? "0.5rem" : "0.2rem"}
-    1rem;
-  font-family: "Poppins", sans-serif;
+  background: var(--green);
+  padding: ${(props) => {
+    if (props.scroll.dir === "up" || props.scroll.off < 550) return "0.5rem";
+
+    return "0.2rem"
+  }} 1rem;
   line-height: 1.5rem;
   color: white;
   border-radius: 0.375rem;
@@ -47,7 +52,7 @@ const Button = styled.button`
   transition-timing-function: ease-in-out;
 
   &:hover {
-    background: #6adf81;
+    background: var(--green-light);
     cursor: pointer;
   }
 `;
