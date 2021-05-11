@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./styles/global.css"
 import { Nav } from "./Nav";
+import "./styles/"
 
 ReactDOM.render(
   <React.StrictMode>
