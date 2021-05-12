@@ -1,7 +1,12 @@
 import { HiChevronDown } from "react-icons/hi";
 import { StyledIcon, StyledLink } from "./styled";
 
-export const Link = ({ text, dropdown = false }) => (
+interface LinkProps {
+  text: string;
+  dropdown?: boolean;
+}
+
+export const Link = ({ text, dropdown = false }: LinkProps) => (
   <StyledLink href="#">
     <span>{text}</span>
     {dropdown && (

@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import { StyledDiv } from "./styled";
 
 export const Instructions = () => {

@@ -1,5 +1,12 @@
 import styled from "styled-components";
 
+interface Props {
+  scroll: {
+    dir: string;
+    off: number;
+  }
+}
+
 export const StyledDiv = styled.div`
   width: 30rem;
   height: 4rem;
@@ -38,7 +45,7 @@ export const StyledIcon = styled.div`
   font-weight: 700;
 `;
 
-export const StyledNav = styled.nav`
+export const StyledNav = styled.nav<Props>`
   width: 100%;
   height: ${(props) => {
     if (props.scroll.off === 0) return "6.8rem";
@@ -73,7 +80,7 @@ export const StyledNav = styled.nav`
   }
 `;
 
-export const StyledButton = styled.button`
+export const StyledButton = styled.button<Props>`
   background: var(--green);
   padding: ${(props) => {
       if (props.scroll.dir === "up" || props.scroll.off < 550) return "0.5rem";
@@ -126,3 +133,5 @@ export const StyledText = styled.p`
   text-shadow: 2px 2px var(--green);
   text-align: center;
 `;
+
+export const EmptyLink = styled.a``
